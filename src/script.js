@@ -7,10 +7,10 @@ const canvas = document.querySelector("#canvas");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x1f1e23);
 const camera = new THREE.PerspectiveCamera(
-	75,
+	50,
 	window.innerWidth / (window.innerHeight * 0.8),
 	0.1,
-	100
+	50
 );
 camera.position.z = 10;
 
@@ -88,7 +88,7 @@ scene.add(pointLight, ambientLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 //disable zoom
 controls.enableZoom = true;
-controls.rotateSpeed = 0.7;
+controls.rotateSpeed = 1;
 
 window.addEventListener("resize", onWindowResize);
 
@@ -106,7 +106,7 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	let elapsedTime = clock.getElapsedTime();
-	let angle = elapsedTime * 0.3;
+	let angle = elapsedTime * 1.5;
 
 	twitter.position.x = 4.5 * Math.cos(angle);
 	twitter.position.y = 4 * Math.sin(angle);
