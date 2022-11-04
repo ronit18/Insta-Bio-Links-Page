@@ -21,9 +21,11 @@ h1 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	z-index: 1;
 }
 
 main {
+	z-index: 100;
 	position: relative;
 }
 
@@ -36,8 +38,8 @@ header {
 }
 
 header > img {
-	width: 6em;
-	height: 6em;
+	width: 13em;
+	height: 13em;
 	border-radius: 100%;
 	border: 1px solid #fff;
 	box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
