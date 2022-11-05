@@ -125,7 +125,7 @@ a:hover {
 	left: 0;
 	z-index: 1;
 	transition: all 0.3s;
-	border: 1px solid rgba(255, 255, 255, 0.5);
+	border: none;
 }
 
 .btn:hover::after {
@@ -143,6 +143,7 @@ a:hover {
 
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 @keyframes rotatecw {
@@ -162,6 +163,7 @@ a:hover {
 		transform: rotate(-360deg);
 	}
 }
+/* border: 1px solid rgba(255, 255, 255, 0.5); */
 
 
 /*# sourceMappingURL=main.css.map*/
