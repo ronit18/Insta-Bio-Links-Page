@@ -4,6 +4,13 @@ html {
 	padding: 0;
 	font-family: "Open Sans", sans-serif;
 	color: #fff;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
 }
 
 body {
@@ -21,11 +28,10 @@ h1 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 1;
+	touch-action: manipulation;
 }
 
 main {
-	z-index: 100;
 	position: relative;
 }
 
@@ -51,7 +57,7 @@ header > img {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 0;
 }
 
 header > h1 {
@@ -109,12 +115,50 @@ a:hover {
 	transform: scale(1.04);
 }
 
-.discription {
+.btn::before,
+.btn::after {
+	content: "";
 	position: absolute;
-	padding-bottom: 2rem;
 	width: 100%;
-	left: 0;
+	height: 100%;
 	bottom: 0;
-	text-align: center;
-	font-size: 0.8rem;
+	left: 0;
+	z-index: 1;
+	transition: all 0.3s;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn:hover::after {
+	animation-name: rotatecw;
+	animation-duration: 2s;
+}
+.btn:hover::before {
+	animation-name: rotateccw;
+	animation-duration: 3s;
+}
+.btn:hover::after,
+.btn:hover::before {
+	/* left: 96px; */
+	/* width: 64px; */
+
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateccw {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
 }

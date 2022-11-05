@@ -62,8 +62,19 @@ github.add(
 	),
 	new THREE.PointLight("#7F3FF1")
 );
-
 scene.add(github);
+
+// homepage
+const homepage = new THREE.Group();
+homepage.add(
+	new THREE.Mesh(
+		new THREE.SphereBufferGeometry(0.1, 10, 10),
+		new THREE.MeshStandardMaterial({ color: "#d7e4f7" })
+	),
+	new THREE.PointLight("#d7e4f7")
+);
+
+scene.add(homepage);
 
 // insta
 const insta = new THREE.Group();
@@ -86,8 +97,8 @@ scene.add(pointLight, ambientLight);
 
 // controles
 const controls = new OrbitControls(camera, renderer.domElement);
-//disable zoom
 controls.enableZoom = true;
+controls.enableRotate = true;
 controls.rotateSpeed = 1;
 
 window.addEventListener("resize", onWindowResize);
@@ -116,8 +127,12 @@ function animate() {
 	linkedIn.position.z = 4.3 * Math.sin(angle);
 	linkedIn.position.y = 2 * Math.sin(-0.2 * angle);
 
-	github.position.y = 4.8 * Math.cos(angle);
-	github.position.z = 4.8 * Math.sin(angle);
+	github.position.y = 2.8 * Math.cos(angle);
+	github.position.z = 2.8 * Math.sin(angle);
+
+	homepage.position.y = -4.8 * Math.cos(angle);
+	homepage.position.z = -4.8 * Math.sin(angle);
+	homepage.position.y = 3 * Math.sin(-0.2 * angle);
 
 	insta.position.x = -5 * Math.cos(angle);
 	insta.position.y = -4.5 * Math.sin(angle);
