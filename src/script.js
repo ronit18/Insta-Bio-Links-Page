@@ -92,7 +92,7 @@ scene.add(insta);
 const pointLight = new THREE.PointLight(0xaaaa9b);
 pointLight.position.set(0, 5, 9);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
 scene.add(pointLight, ambientLight);
 
 // controles
@@ -138,8 +138,8 @@ function animate() {
 	insta.position.y = -4.5 * Math.sin(angle);
 	insta.position.z = -Math.sin(0.1 * angle);
 
-	sphere.rotation.x += 0.002;
-	sphere.rotation.y += 0.002;
+	sphere.rotation.x += 0.007;
+	sphere.rotation.y += 0.007;
 
 	controls.update();
 	renderer.render(scene, camera);
